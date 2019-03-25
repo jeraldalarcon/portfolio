@@ -1,0 +1,42 @@
+
+
+.mat-form-field{
+    width: 300px;
+    margin: 0 30px;
+    /* margin: 10px 10px 0px; */
+
+}
+
+.mat-card{
+    margin:20px 0 3px;
+    border-radius: 10px 10px 0px 0px ;
+    font-size: 20px;
+    font-weight: 900;
+
+}
+
+form{
+    background: #ffffff;
+    margin-bottom:30px;
+    border-radius: 0px 0px 10px 10px;
+    padding:5px;
+   
+}
+
+.button-grp{
+    padding:10px;
+    margin-left:21px;
+}
+
+.large-btn{
+    width: 200px;
+}
+
+.text-small{
+    font-size: 13px;
+}
+
+.mat-raised-button[disabled]:not([class*=mat-elevation-z]){
+    width: 200px;
+    margin:0 0 0 10px ;
+}

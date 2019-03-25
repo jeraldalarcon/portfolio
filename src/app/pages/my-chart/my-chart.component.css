@@ -1,0 +1,89 @@
+.container{
+    margin-top:50px;
+    margin-bottom: 50px;
+    height: 100%;
+}
+
+img{
+    width: 100px;
+    height: 100px;
+    border-radius:5px;
+}
+
+.name{
+    font-weight: bolder;
+    font-size: 15px;
+}
+
+.des{
+    opacity:0.6;
+    font-size: 11px;
+    line-height: 12px;
+}
+
+.remove{
+    font-size: 13px;
+    color:red;
+    letter-spacing: -1px;
+
+}
+
+
+.input-price{
+    background: none;
+    cursor: none;
+    width: 60px;
+    border:none;
+    font-size: 11px;
+    border-bottom: 1px solid gray;
+
+}
+
+.total{
+    font-size: 20px;
+    text-align: center;
+
+}
+
+.item-text{
+    font-size: 13px;
+    font-weight: bolder;
+    text-align: justify;
+    margin:5px 10px 5px;
+}
+
+.row-item{
+    margin:10px 0 10px 0 ;
+}
+
+.totalPrice{
+    width: 91px;
+    border:none;
+    cursor: none;
+    font-weight: bold;
+}
+
+.qty{
+    cursor:pointer;
+    background: none;
+    cursor: none;
+    width: 50px;
+    border:none;
+    font-size: 13px;
+}
+
+label{
+    font-size:10px;
+    margin:3px;
+}
+
+.total-price{
+    width:52px;
+}
+
+.text-small:link{
+    color: #007bff;
+    text-decoration: none;
+    font-size: 13px;
+}
+

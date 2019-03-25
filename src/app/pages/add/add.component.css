@@ -1,0 +1,35 @@
+.mat-form-field{
+    width: 300px;
+    margin: 0 30px;
+    margin-top: 10px;
+
+}
+
+input{
+    width: 300px;
+    margin: 0 30px;
+    margin-top: 10px;
+}
+
+.mat-raised-button{
+    width: 200px;
+    margin: 20px 0 0 10px ;
+    width: 200px;
+    margin-left: 29px;
+}
+
+.area{
+    width: 300px;
+    height: 150px;
+    margin-bottom:5px;
+}
+
+.mat-card{
+    width: 400px;
+    padding: 23px;
+}
+
+.price-field{
+    margin-top: 10px;
+}
+

@@ -1,0 +1,110 @@
+
+<!-- <div class="container">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+                <mat-card>
+                    <mat-toolbar>
+                        <div class="row">User List</div>
+                    </mat-toolbar>
+                    <div class="row">
+                        <div class="alert alert-danger" *ngIf="errorMsg">
+                          {{errorMsg}}
+                        </div>
+                                <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>name</th>
+                                                <th>email</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr >
+                                                <td>{{ userList.name}}</td>
+                                                <td>{{ userList.email}}</td>
+                                                <td>
+                                                        <button mat-icon-button [matMenuTriggerFor]="menu">
+                                                                <mat-icon>action</mat-icon>
+                                                              </button>
+                                                              <mat-menu #menu="matMenu">
+                                                                <button mat-menu-item>
+                                                                  <a href ='editProduct/{{ userList.id }}'>Edit</a>
+                                                                </button>
+                                                                <button mat-menu-item>
+                                                                  <a (click)="delete(userList.id)">Delete</a>
+                                                                </button>
+                                                              </mat-menu>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                </table>
+                    </div>
+                </mat-card>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div> -->
+
+
+<div class="container">
+        <div class="row">
+          <div class="col-md-1"></div>
+          <div class="col-md-10" style="margin-bottom:50px;">
+              <mat-toolbar >User List</mat-toolbar>
+              <a  mat-raised-button mat-button routerLink='/register'>Create</a>
+                  <!-- <div class="search-div">
+                    <a  mat-raised-button mat-button routerLink='/register'>Create</a>
+                    <mat-form-field class="search-form-field">
+                      <input matInput [(ngModel)]="searchKey" placeholder="Search" autocomplete="off">
+                      <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="searchKey">
+                        <mat-icon>close</mat-icon>
+                      </button>
+                    </mat-form-field>
+                  </div> -->
+      
+                  <div class="mat-elevation-z8">
+                    <mat-table [dataSource]="listData"  matSort>
+      
+                        <ng-container matColumnDef="id">
+                          <mat-header-cell *matHeaderCellDef mat-sort-header > Id </mat-header-cell>
+                          <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+                        </ng-container>
+      
+                        <ng-container matColumnDef="name" >
+                          <mat-header-cell *matHeaderCellDef mat-sort-header> User Name </mat-header-cell>
+                          <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+                        </ng-container>
+                      
+                        <ng-container matColumnDef="email" >
+                          <mat-header-cell *matHeaderCellDef mat-sort-header> Email </mat-header-cell>
+                          <mat-cell *matCellDef="let element" class="responsive-image"> {{element.email}} </mat-cell>
+                        </ng-container>
+      
+                        <ng-container matColumnDef="role" >
+                            <mat-header-cell *matHeaderCellDef mat-sort-header> Role </mat-header-cell>
+                            <mat-cell *matCellDef="let element"> {{element.role}} </mat-cell>
+                        </ng-container>
+                      
+      
+                        <ng-container matColumnDef="actions" >
+                          <mat-header-cell *matHeaderCellDef></mat-header-cell>
+                          <mat-cell *matCellDef="let element">
+                              <a class="btn btn-default small-btn "  routerLink='/editUser/{{ element.id }}'>Edit</a>
+                              <a class="btn btn-default small-btn "  (click)="delete(element.id)">Delete</a>
+                          </mat-cell>
+                        </ng-container>
+                          
+                        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                        
+                    </mat-table>
+      
+                    <mat-paginator [pageSizeOptions]="[5,10,25,100]" [pageSize]="5" showFirstLastButtons></mat-paginator>
+                  </div> 
+      
+                </div>
+                <div class="col-md-1"></div>
+              </div>
+      
+        </div>

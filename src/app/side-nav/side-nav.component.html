@@ -1,0 +1,97 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+  
+      [style.display]=" showLog ? 'block': 'none' " 
+      #drawer class="sidenav" fixedInViewport="true"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="!(isHandset$ | async)" >
+    <mat-toolbar class="menu-title">Menu</mat-toolbar>
+    <mat-nav-list>
+        
+      <a mat-list-item [routerLink]="['']">DashBoard</a>
+      <div *ngIf="isAdmin">
+      <a mat-list-item routerLink='/management'>Management</a>
+      <a mat-list-item routerLink='/productList'>Product List</a>   
+      </div>
+      
+      <a mat-list-item routerLink='/my-chart'>My chart</a>
+      <a mat-list-item routerLink='/profile'>Profile</a>
+
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content >
+    <mat-toolbar color="primary" >
+      
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      
+      <div class="col-md-4">
+        <a class="title-link" routerLink = ''><span>E-Shop</span></a>
+      </div>
+
+      <div class="col-md-4 ">
+        <div class="row">
+          <div class="col-md-4"></div>
+          <div class="col-md-4"></div>
+          <div class="col-md-4 " >
+              <!-- <button mat-icon-button [matMenuTriggerFor]="menu" >
+                  <mat-icon MatBadgeSize ="small" matBadge="15" matBadgeColor="warn" matBadgePosition="before">cart</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                  <button mat-menu-item>
+                    <mat-icon>dialpad</mat-icon>
+                    <span>Redial</span>
+                  </button>
+                  <button mat-menu-item>
+                    <mat-icon>notifications_off</mat-icon>
+                    <span>Disable alerts</span>
+                  </button>
+                </mat-menu> -->
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+          <div class="row">
+          <!-- <div class="col-md-6" style="font-size:10px"> -->
+              <button mat-icon-button [matMenuTriggerFor]="menu">
+                  <mat-icon>action</mat-icon> 
+                </button>
+                <mat-menu #menu="matMenu">
+                  <div *ngIf="hasUser" >
+                    <button mat-menu-item >
+                        <a routerLink='sign-in'><button mat-button >Login</button></a>
+                    </button>
+                    <button mat-menu-item>
+                      <a routerLink='register'><button mat-button >Register</button></a>
+                    </button>
+                  </div>
+                  <div *ngIf="hasLogout">
+                  <button mat-menu-item>
+                    <button mat-button class="logoutBtn"(click)="logout()">Log-Out</button>
+                  </button>
+                  </div>
+                </mat-menu>
+                
+          <!-- </div> -->
+        </div>
+      </div>
+      </div>
+      </div>
+    </mat-toolbar>
+
+    <ng-content ></ng-content>
+   
+  </mat-sidenav-content>
+  <mat-toolbar>hello</mat-toolbar>
+</mat-sidenav-container>

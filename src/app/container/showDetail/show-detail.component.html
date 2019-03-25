@@ -1,0 +1,39 @@
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-6">
+      <mat-card>
+      <div class="row">
+          <a routerLink="" class="text-small" >Back</a>
+          <mat-toolbar>{{ data.product_name }}</mat-toolbar>
+        <div class="col-md-6 col-half1">
+            <span class="add-cart"></span><img src="http://127.0.0.1:8000/product_image/{{data.product_image}}" width="200px" height="200px">
+        </div>
+          <div class="col-md-6 col-half2">
+            <ul>
+              <li>{{ data.product_description }}</li>
+              <li>{{ data.product_price }}</li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4"> </div>
+            <div class="col-md-4">
+                <form [formGroup]="detailsForm" (ngSubmit)="addItem()">
+                    <input type="hidden" formControlName="product_id" name="product_id"  [(ngModel)]="data.id">
+                    <input type="hidden" formControlName="product_name" name="product_name" [(ngModel)]="data.product_name">
+                    <input type="hidden" formControlName="product_price" name="product_price" [(ngModel)]="data.product_price">
+                    <input type="hidden" formControlName="product_image" name="product_image" [(ngModel)]="data.product_image" (change)="fileChange($event)" >
+                  <button class="btn btn-lg">Add to the Cart</button>
+                </form>
+            </div>
+        </div>
+      </mat-card>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+</div>
+

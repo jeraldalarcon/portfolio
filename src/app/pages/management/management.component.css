@@ -1,0 +1,15 @@
+.mat-form-field {
+    width: 374px;
+    margin: 0px 20px;
+}
+
+.container{
+    height: 100%;
+    margin-top:50px;
+    margin-bottom:50px;
+}
+
+.small-btn{
+    padding:5px;
+    margin-right:5px;
+}

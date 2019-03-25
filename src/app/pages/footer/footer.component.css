@@ -1,0 +1,13 @@
+.container{
+    background: #f5d700;
+    margin:20px 0;
+}
+
+ul li{
+    padding:10px;
+}
+
+ul  li a:link{
+    color:gainsboro;
+    text-decoration: none;
+}

@@ -1,0 +1,81 @@
+
+<div class="container">
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+          <mat-toolbar>Product List</mat-toolbar>
+          <button mat-button routerLink="/add">Create</button>
+              <!-- <div class="search-div">
+                <form [formGroup]="searchForm" (ngSubmit)="search()">
+                <mat-form-field class="search-form-field"> 
+                    <a mat-button matSuffix >Search</a> 
+                  <input matInput [(ngModel)]="searchKey" name="searchKey" formControlName="searchKey"  placeholder="Search" autocomplete="off">
+                  <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="searchKey">
+                    <mat-icon>close</mat-icon>
+                  </button>
+                </mat-form-field>
+                <button mat-button routerLink="/add">Create</button>
+              </form>
+              </div>
+              
+              <div>{{ searchResult}}</div> -->
+  
+              <div class="mat-elevation-z8">
+                <mat-table [dataSource]="listData"  matSort>
+  
+                    <ng-container matColumnDef="id">
+                      <mat-header-cell *matHeaderCellDef mat-sort-header > product Id </mat-header-cell>
+                      <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+                    </ng-container>
+  
+                    <ng-container matColumnDef="product_name" >
+                      <mat-header-cell *matHeaderCellDef mat-sort-header> Product Name </mat-header-cell>
+                      <mat-cell *matCellDef="let element"> {{element.product_name}} </mat-cell>
+                    </ng-container>
+                  
+                    <ng-container matColumnDef="product_image" >
+                      <mat-header-cell *matHeaderCellDef mat-sort-header> Image Name </mat-header-cell>
+                      <mat-cell *matCellDef="let element" class="responsive-image"> {{element.product_image}} </mat-cell>
+                    </ng-container>
+  
+                    <ng-container matColumnDef="product_price" >
+                        <mat-header-cell *matHeaderCellDef mat-sort-header> Price </mat-header-cell>
+                        <mat-cell *matCellDef="let element"> {{element.product_price |number }} </mat-cell>
+                    </ng-container>
+                  
+                    <ng-container matColumnDef="url">
+                      <mat-header-cell *matHeaderCellDef mat-sort-header> Photo </mat-header-cell>
+                      <mat-cell *matCellDef="let element"> <img src='{{element.url}}'> </mat-cell>
+                    </ng-container>
+  
+                    <ng-container matColumnDef="user_id" >
+                      <mat-header-cell *matHeaderCellDef mat-sort-header> User Id </mat-header-cell>
+                      <mat-cell *matCellDef="let element"> {{element.user_id}} </mat-cell>
+                    </ng-container>
+  
+                    <ng-container matColumnDef="actions" >
+                      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+                      <mat-cell *matCellDef="let element">
+
+                          <a class="btn btn-default small-btn "  routerLink ='/editProduct/{{ element.id }}'>Edit</a>
+                          <a class="btn btn-default small-btn "  (click)="delete(element.id)">Delete</a>
+
+                      </mat-cell>
+                    </ng-container>
+                      
+                    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                    
+                </mat-table>
+  
+                <mat-paginator [pageSizeOptions]="[5,10,25,100]" [pageSize]="5" showFirstLastButtons></mat-paginator>
+              </div> 
+  
+            </div>
+            <div class="col-md-1"></div>
+          </div>
+  
+    </div>
+          
+          
+  
